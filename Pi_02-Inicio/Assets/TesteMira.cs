@@ -9,8 +9,9 @@ public class TesteMira : MonoBehaviour
 	//CursorMode cursorMode;
 	 
 	public GameObject Tiro;
+	public Camera camera;
 
-	Vector3 Giro;
+	static public Vector3 Giro;
 
 
 
@@ -25,7 +26,7 @@ public class TesteMira : MonoBehaviour
 
 
 		//Cursor.SetCursor (Mouse,Giro,cursorMode);
-		Screen.lockCursor = true;
+		//Screen.lockCursor = true;
 	}
 
 
@@ -33,13 +34,10 @@ public class TesteMira : MonoBehaviour
 	{
 		//## Para controle de game
 
-	///print (Input.GetAxis("Move2") +"y");
-		//print (Input.GetAxis("Move1") + "1");
+	//print (Input.GetAxis("Move2") +"y");
 
-
-		//Giro = new Vector3  (Input.GetAxis("Move1"),Input.GetAxis("Move2"),0);
-		Giro = new Vector3  (Input.GetAxis("Mouse X"),Input.GetAxis("Mouse Y"),0);
-
+		Giro = new Vector3  (Input.GetAxis("Mouse X") * Time.deltaTime,Input.GetAxis("Mouse Y")* Time.deltaTime,0);
+		
 
 		//if(Input.GetAxis("Move1")!=0 || Input.GetAxis("Move2")!=0 ){	}
 		Atual.transform.forward = Vector3.Slerp (Atual.transform.forward,Giro,Time.deltaTime * Sensibilidade);

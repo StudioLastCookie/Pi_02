@@ -8,6 +8,7 @@ public class Tiro : MonoBehaviour
 	public	float forca;
 	Transform novabala;
 
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -23,6 +24,9 @@ public class Tiro : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		// emite raio para verificar caminho do tiro
+		Debug.DrawRay (transform.position,transform.forward, Color.red);
+
 		//if (Input.GetAxis("Tiro")!=0) 
 	if(Input.GetKeyDown(KeyCode.Mouse0) )
 	

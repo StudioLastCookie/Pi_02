@@ -16,9 +16,7 @@ public class Cursor : MonoBehaviour {
 	void Update () 
 	{
 
-		gameObject.transform.position += posicaoCursor = new Vector3
-		(Input.GetAxis("Mouse X") * Time.deltaTime,
-		 Input.GetAxis("Mouse Y") * Time.deltaTime,0);
+		gameObject.transform.position += TesteMira.Giro;
 		 	// valor do objeto ao cursor  
 
 

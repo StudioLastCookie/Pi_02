@@ -45,6 +45,11 @@ public class MovePersonagem : MonoBehaviour {
 			_Lado = new Mover (Atual, Direcao.Leste,Velocidade,Horizontal, ref historico);
 			_Lado.Executar (false);
 		}
+		if(Horizontal !=0 && Vetical != 0) 
+		{
+			Vetical-= Horizontal;
+			Horizontal-=Vetical;
+		}
 	//	print (historico.Count);
 	}
 }
