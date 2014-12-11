@@ -25,7 +25,7 @@ public class Tiro : MonoBehaviour
 	void Update () 
 	{
 		// emite raio para verificar caminho do tiro
-		Debug.DrawRay (transform.position,transform.forward, Color.red);
+		//Debug.DrawRay (transform.position,transform.forward, Color.red);
 
 		//if (Input.GetAxis("Tiro")!=0) 
 	if(Input.GetKeyDown(KeyCode.Mouse0) )
