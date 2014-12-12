@@ -32,7 +32,7 @@ public class TesteMira : MonoBehaviour
 
 	void Update ()
 	{
-		Debug.DrawRay (Atual.transform.position,Atual.transform.forward, Color.red);
+		//Debug.DrawRay (Atual.transform.position,Atual.transform.forward, Color.red);
 		//## Para controle de game com mouse capturando por segundo o movimento do cursor 
 
 	//print (Input.GetAxis("Move2") +"y");
@@ -50,7 +50,15 @@ public class TesteMira : MonoBehaviour
 
 
 
-		Atual.transform.forward = (Mouse.transform.position);
+		transform.forward += camera.transform.forward * Time.deltaTime ;
 
+
+	}
+	void OnDrawGizmosSelected()
+	{
+		Gizmos.color = Color.blue;
+		Vector3 dir = transform.TransformDirection (transform.forward) * 5;
+		Gizmos.DrawRay (transform.position, dir);
+		
 	}
 }
